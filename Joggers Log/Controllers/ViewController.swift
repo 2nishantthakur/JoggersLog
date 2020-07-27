@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var signUp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         logIn.layer.borderWidth = 1
         logIn.layer.borderColor = UIColor.white.cgColor
         logIn.layer.cornerRadius = logIn.frame.height/2

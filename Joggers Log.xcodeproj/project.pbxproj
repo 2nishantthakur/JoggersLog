@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40AE22A709F28F54B8A704CC /* Pods_Joggers_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */; };
+		8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */; };
 		8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */; };
 		8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */; };
 		8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C224CC2B98002C9EAC /* ViewController.swift */; };
@@ -14,9 +16,14 @@
 		8494B8C924CC2B98002C9EAC /* Joggers_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C724CC2B98002C9EAC /* Joggers_Log.xcdatamodeld */; };
 		8494B8CB24CC2B9B002C9EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8494B8CA24CC2B9B002C9EAC /* Assets.xcassets */; };
 		8494B8CE24CC2B9B002C9EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8494B8CC24CC2B9B002C9EAC /* LaunchScreen.storyboard */; };
+		84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE647E24CD664C0010D198 /* SignUpViewController.swift */; };
+		84DE648124CD80560010D198 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE648024CD80560010D198 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.release.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.release.xcconfig"; sourceTree = "<group>"; };
+		61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joggers_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
 		8494B8BB24CC2B97002C9EAC /* Joggers Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Joggers Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,9 @@
 		8494B8CA24CC2B9B002C9EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8494B8CD24CC2B9B002C9EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8494B8CF24CC2B9B002C9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84DE647E24CD664C0010D198 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84DE648024CD80560010D198 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D2040AF9ECDC81778B3BE0A9 /* Pods-Joggers Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.debug.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AE22A709F28F54B8A704CC /* Pods_Joggers_Log.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +55,8 @@
 			children = (
 				8494B8BD24CC2B97002C9EAC /* Joggers Log */,
 				8494B8BC24CC2B97002C9EAC /* Products */,
+				E887349D1E7602C51EAA1467 /* Pods */,
+				C90C1021ECADFA4C226633AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +73,58 @@
 			children = (
 				8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */,
 				8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */,
-				8494B8C224CC2B98002C9EAC /* ViewController.swift */,
-				8494B8C424CC2B98002C9EAC /* Main.storyboard */,
+				84DA1CEA24CDB90C00765E7D /* Model */,
+				84DA1CEB24CDB91300765E7D /* View */,
+				84DA1CEC24CDB91A00765E7D /* Controllers */,
 				8494B8CA24CC2B9B002C9EAC /* Assets.xcassets */,
 				8494B8CC24CC2B9B002C9EAC /* LaunchScreen.storyboard */,
 				8494B8CF24CC2B9B002C9EAC /* Info.plist */,
 				8494B8C724CC2B98002C9EAC /* Joggers_Log.xcdatamodeld */,
 			);
 			path = "Joggers Log";
+			sourceTree = "<group>";
+		};
+		84DA1CEA24CDB90C00765E7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84DA1CEB24CDB91300765E7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8494B8C424CC2B98002C9EAC /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84DA1CEC24CDB91A00765E7D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8494B8C224CC2B98002C9EAC /* ViewController.swift */,
+				84DE647E24CD664C0010D198 /* SignUpViewController.swift */,
+				84DE648024CD80560010D198 /* LoginViewController.swift */,
+				8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C90C1021ECADFA4C226633AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E887349D1E7602C51EAA1467 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2040AF9ECDC81778B3BE0A9 /* Pods-Joggers Log.debug.xcconfig */,
+				0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8494B8D224CC2B9B002C9EAC /* Build configuration list for PBXNativeTarget "Joggers Log" */;
 			buildPhases = (
+				2DF7BDCE936D3D85B89B88CD /* [CP] Check Pods Manifest.lock */,
 				8494B8B724CC2B97002C9EAC /* Sources */,
 				8494B8B824CC2B97002C9EAC /* Frameworks */,
 				8494B8B924CC2B97002C9EAC /* Resources */,
+				3CFBB3C809AA549CD3656901 /* [CP] Embed Pods Frameworks */,
+				2CB312CCE48D946B09628F18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,15 +196,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CB312CCE48D946B09628F18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DF7BDCE936D3D85B89B88CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Joggers Log-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CFBB3C809AA549CD3656901 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Joggers Log/Pods-Joggers Log-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8494B8B724CC2B97002C9EAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DE648124CD80560010D198 /* LoginViewController.swift in Sources */,
 				8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */,
 				8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */,
 				8494B8C924CC2B98002C9EAC /* Joggers_Log.xcdatamodeld in Sources */,
+				8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */,
 				8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */,
+				84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +408,7 @@
 		};
 		8494B8D324CC2B9B002C9EAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2040AF9ECDC81778B3BE0A9 /* Pods-Joggers Log.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +426,7 @@
 		};
 		8494B8D424CC2B9B002C9EAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
