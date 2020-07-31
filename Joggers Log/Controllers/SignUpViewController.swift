@@ -14,16 +14,19 @@ class SignUpViewController: UIViewController, GIDSignInDelegate {
     
     
 
+   
     @IBOutlet var SwitchToLogin: UIButton!
     @IBOutlet var continueWithGoogle: GIDSignInButton!
     @IBOutlet var continueWithFacebook: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         setButtonProperties()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
 
+        GIDSignIn.sharedInstance().signOut()
         // Automatically sign in the user.
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         //GIDSignIn.sharedInstance().uiDelegate = self
@@ -77,20 +80,28 @@ class SignUpViewController: UIViewController, GIDSignInDelegate {
                 // Successfully logged in
                 // 6
                print("User Logged IN")
+                
                 //MARK:- printing logged in user details
                 GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
-                        print(result)
+                        print(result as Any)
                         let fields = result as? [String:Any]
-                        var firstName = fields!["first_name"] as? String
-                        var lastName = fields!["last_name"] as? String
-                        var email = fields!["email"] as? String
+                       
+                        let email = fields!["email"] as? String
+                        let name = fields!["name"] as? String
+                        //Switch to next screen to fill details
+                        let detailVC = self?.storyboard?.instantiateViewController(withIdentifier: Constants.segues.SignUpDetailsViewController) as! SignUpDetailsViewController
+                         self?.navigationController?.pushViewController(detailVC, animated: true)
+                        detailVC.email = email!
+                        detailVC.name = name!
+                        detailVC.signUpMethod = Constants.signUpMethods.facebook
                     }
                 })
                 print(result)
+                
                 // 7
                 Profile.loadCurrentProfile { (profile, error) in
-                    print(Profile.current)
+                    print(Profile.current as Any)
                    // self?.updateMessage(with: Profile.current?.name)
                 }
                 
@@ -115,9 +126,13 @@ class SignUpViewController: UIViewController, GIDSignInDelegate {
         //here we specify the properties of profile we need like email,name etc.
         let email = user.profile.email
         let name = user.profile.name
-        
-        
-        print(email)
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpDetailsViewController") as! SignUpDetailsViewController
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.email = email!
+        detailVC.name = name!
+        detailVC.signUpMethod = Constants.signUpMethods.google
+        detailVC.user = user
+        print(email as Any)
         
         //guard let authentication = user.authentication else { return }
 //        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)

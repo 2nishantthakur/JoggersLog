@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import FBSDKCoreKit
 import GoogleSignIn
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         )
         GIDSignIn.sharedInstance().clientID = "491675505311-co9ijrvdk6gj8us3ffnd4c67unhnpmpa.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         return true
     }

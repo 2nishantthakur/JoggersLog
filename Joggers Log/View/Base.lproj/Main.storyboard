@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tLZ-It-BBu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ot2-aa-Xal">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -157,12 +157,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCl-ck-bWz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-159"/>
+            <point key="canvasLocation" x="637.68115942028987" y="-159.375"/>
         </scene>
         <!--Sign Up Details View Controller-->
         <scene sceneID="1vm-1X-ZIJ">
             <objects>
-                <viewController id="tLZ-It-BBu" customClass="SignUpDetailsViewController" customModule="Joggers_Log" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpDetailsViewController" id="tLZ-It-BBu" customClass="SignUpDetailsViewController" customModule="Joggers_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0v-4r-RfV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-Ib-9Rn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-Ib-9Rn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="47" y="258" width="321" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -244,22 +244,101 @@
                                 <state key="normal" title="Sign UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="tLZ-It-BBu" eventType="touchUpInside" id="uIg-KK-aC1"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="W5h-rn-5Nh">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="cKN-rg-rFs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="umt-pz-Q6Z"/>
                     <connections>
-                        <outlet property="Email" destination="d6Y-Ib-9Rn" id="23Q-fe-yZS"/>
-                        <outlet property="dob" destination="zmn-MA-19p" id="fLM-sY-5cU"/>
-                        <outlet property="gender" destination="SiN-de-ADV" id="vVv-R4-5QG"/>
-                        <outlet property="name" destination="NCf-I3-YjP" id="rwD-2u-lLR"/>
+                        <outlet property="dobTextfield" destination="zmn-MA-19p" id="qhe-TX-Wuq"/>
+                        <outlet property="emailTextfield" destination="d6Y-Ib-9Rn" id="iCb-B7-e5j"/>
+                        <outlet property="genderTextfield" destination="SiN-de-ADV" id="fsk-ed-MSh"/>
+                        <outlet property="loading" destination="W5h-rn-5Nh" id="i2y-tX-mN2"/>
+                        <outlet property="nameTextfield" destination="NCf-I3-YjP" id="QQg-Sm-d1v"/>
                         <outlet property="signUpButton" destination="rRt-AY-TWO" id="b5j-mu-4zK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuV-T5-24g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1446.376811594203" y="172.76785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Jy-05-ca4">
+            <objects>
+                <viewController id="Ot2-aa-Xal" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hyT-Q0-Wbd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xVx-n7-h9q">
+                                <rect key="frame" x="0.0" y="110" width="414" height="750"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yb-u9-qtA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8N-cM-Lnv">
+                                        <rect key="frame" x="346" y="48" width="45" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.01176488493" green="0.011764383870000001" blue="0.01176472288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="plus" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-IB-lUd">
+                                        <rect key="frame" x="27" y="52" width="38" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <color key="tintColor" red="0.01176488493" green="0.011764383870000001" blue="0.01176472288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="menu icon">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42" scale="default"/>
+                                        </state>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-qG-czK">
+                                        <rect key="frame" x="73" y="21" width="297" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45032665977708519" green="0.56185137445728051" blue="0.61571437120000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-gb-Vo9">
+                                <rect key="frame" x="354" y="133" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.01176488493" green="0.011764383870000001" blue="0.01176472288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="location">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5Q-Su-SeM">
+                                <rect key="frame" x="0.0" y="784" width="414" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="g29-MO-zeQ"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMo-me-OBY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2482.608695652174" y="172.76785714285714"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hvl-hi-Ejw">
@@ -337,7 +416,10 @@
         <image name="F_icon_reversed.svg" width="36" height="36"/>
         <image name="Screenshot 2020-07-25 at 3.26.16 PM" width="337" height="684"/>
         <image name="google-logo-png-webinar-optimizing-for-success-google-business-webinar-13 (2)" width="36" height="36"/>
-        <image name="logo_transparent" width="1200" height="1200"/>
+        <image name="location" width="50" height="50"/>
+        <image name="logo_transparent" width="600" height="600"/>
+        <image name="menu icon" width="24" height="24"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7ZL-7e-Rhq"/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		40AE22A709F28F54B8A704CC /* Pods_Joggers_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */; };
 		8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */; };
+		848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFBD24D3E89B005FD125 /* Constants.swift */; };
+		848DCFC024D3F436005FD125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFBF24D3F436005FD125 /* User.swift */; };
 		8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */; };
 		8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */; };
 		8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C224CC2B98002C9EAC /* ViewController.swift */; };
@@ -18,12 +20,16 @@
 		8494B8CE24CC2B9B002C9EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8494B8CC24CC2B9B002C9EAC /* LaunchScreen.storyboard */; };
 		84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE647E24CD664C0010D198 /* SignUpViewController.swift */; };
 		84DE648124CD80560010D198 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE648024CD80560010D198 /* LoginViewController.swift */; };
+		84F3B8D024D2B3FA002962C8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3B8CF24D2B3FA002962C8 /* Helper.swift */; };
+		84F784BA24D33830008DE9E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F784B924D33830008DE9E3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.release.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.release.xcconfig"; sourceTree = "<group>"; };
 		61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joggers_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
+		848DCFBD24D3E89B005FD125 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		848DCFBF24D3F436005FD125 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8494B8BB24CC2B97002C9EAC /* Joggers Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Joggers Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +41,8 @@
 		8494B8CF24CC2B9B002C9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84DE647E24CD664C0010D198 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84DE648024CD80560010D198 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84F3B8CF24D2B3FA002962C8 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		84F784B924D33830008DE9E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2040AF9ECDC81778B3BE0A9 /* Pods-Joggers Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.debug.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,8 +85,11 @@
 				84DA1CEB24CDB91300765E7D /* View */,
 				84DA1CEC24CDB91A00765E7D /* Controllers */,
 				8494B8CA24CC2B9B002C9EAC /* Assets.xcassets */,
+				84F3B8CF24D2B3FA002962C8 /* Helper.swift */,
+				848DCFBD24D3E89B005FD125 /* Constants.swift */,
 				8494B8CC24CC2B9B002C9EAC /* LaunchScreen.storyboard */,
 				8494B8CF24CC2B9B002C9EAC /* Info.plist */,
+				84F784B924D33830008DE9E3 /* GoogleService-Info.plist */,
 				8494B8C724CC2B98002C9EAC /* Joggers_Log.xcdatamodeld */,
 			);
 			path = "Joggers Log";
@@ -87,6 +98,7 @@
 		84DA1CEA24CDB90C00765E7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				848DCFBF24D3F436005FD125 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8494B8CE24CC2B9B002C9EAC /* LaunchScreen.storyboard in Resources */,
+				84F784BA24D33830008DE9E3 /* GoogleService-Info.plist in Resources */,
 				8494B8CB24CC2B9B002C9EAC /* Assets.xcassets in Resources */,
 				8494B8C624CC2B98002C9EAC /* Main.storyboard in Resources */,
 			);
@@ -267,6 +280,9 @@
 				8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */,
 				8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */,
 				84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */,
+				84F3B8D024D2B3FA002962C8 /* Helper.swift in Sources */,
+				848DCFC024D3F436005FD125 /* User.swift in Sources */,
+				848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54344XQ2GR;
 				INFOPLIST_FILE = "Joggers Log/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54344XQ2GR;
 				INFOPLIST_FILE = "Joggers Log/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
