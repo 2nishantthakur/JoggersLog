@@ -16,9 +16,12 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
 
 
-
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        print("Document Directory: " , FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found")
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions
@@ -26,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         GIDSignIn.sharedInstance().clientID = "491675505311-co9ijrvdk6gj8us3ffnd4c67unhnpmpa.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
         FirebaseApp.configure()
+        
+      //self.window = UIWindow(frame: UIScreen.main.bounds)
+
+       
+        
         // Override point for customization after application launch.
         return true
     }

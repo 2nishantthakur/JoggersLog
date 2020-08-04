@@ -15,5 +15,20 @@ struct Constants {
     }
     struct segues{
         static let SignUpDetailsViewController  = "SignUpDetailsViewController"
+        static let ShowLoggedInScreen = "ShowLoggedInScreen"
+        static let successfullLogin = "successfullLogin"
+    }
+    struct VC {
+        static let LoginViewController = "LoginViewController"
+        static let LoggedInViewController = "LoggedInViewController"
+        static let SignUpViewController = "SignUpViewController"
+        static let FirstScreen = "ViewController"
+    }
+    struct entity{
+        static let LoggedInUser = "LoggedInUser"
+    }
+    struct attributes{
+        static let email = "email"
+        static let name = "name"
     }
 }

@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		40AE22A709F28F54B8A704CC /* Pods_Joggers_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */; };
+		842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */; };
 		8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */; };
 		848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFBD24D3E89B005FD125 /* Constants.swift */; };
 		848DCFC024D3F436005FD125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFBF24D3F436005FD125 /* User.swift */; };
+		848DCFC224D41C44005FD125 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFC124D41C43005FD125 /* LoggedInViewController.swift */; };
+		848DCFC424D4847C005FD125 /* HamBurgerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFC324D4847C005FD125 /* HamBurgerMenuViewController.swift */; };
 		8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */; };
 		8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */; };
 		8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8494B8C224CC2B98002C9EAC /* ViewController.swift */; };
@@ -27,9 +30,12 @@
 /* Begin PBXFileReference section */
 		0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.release.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.release.xcconfig"; sourceTree = "<group>"; };
 		61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joggers_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
 		848DCFBD24D3E89B005FD125 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		848DCFBF24D3F436005FD125 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		848DCFC124D41C43005FD125 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		848DCFC324D4847C005FD125 /* HamBurgerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamBurgerMenuViewController.swift; sourceTree = "<group>"; };
 		8494B8BB24CC2B97002C9EAC /* Joggers Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Joggers Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8494B8BE24CC2B98002C9EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8494B8C024CC2B98002C9EAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 				84DE647E24CD664C0010D198 /* SignUpViewController.swift */,
 				84DE648024CD80560010D198 /* LoginViewController.swift */,
 				8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */,
+				848DCFC124D41C43005FD125 /* LoggedInViewController.swift */,
+				848DCFC324D4847C005FD125 /* HamBurgerMenuViewController.swift */,
+				842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848DCFC224D41C44005FD125 /* LoggedInViewController.swift in Sources */,
 				84DE648124CD80560010D198 /* LoginViewController.swift in Sources */,
 				8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */,
 				8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */,
@@ -282,7 +292,9 @@
 				84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */,
 				84F3B8D024D2B3FA002962C8 /* Helper.swift in Sources */,
 				848DCFC024D3F436005FD125 /* User.swift in Sources */,
+				842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */,
 				848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */,
+				848DCFC424D4847C005FD125 /* HamBurgerMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

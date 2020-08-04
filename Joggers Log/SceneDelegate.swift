@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,10 +28,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             sourceApplication: nil,
             annotation: [UIApplication.OpenURLOptionsKey.annotation]
         )
+        
     }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        let currentUser = Auth.auth().currentUser
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if currentUser != nil
+        {
+            print(currentUser?.email)
+            
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.VC.LoggedInViewController)
+            let nav = UINavigationController(rootViewController: rootViewController)
+            window!.rootViewController = nav
+        }
+        else
+        {
+            let rootViewController = storyboard.instantiateViewController(withIdentifier: Constants.VC.FirstScreen)
+            let nav = UINavigationController(rootViewController: rootViewController)
+            window!.rootViewController = nav
+        }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).

@@ -7,32 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "05B16989-FB5E-402F-A9C3-54FCAEB42464"
-            shouldBeEnabled = "Yes"
+            uuid = "DF317C40-4778-4349-8ED3-AADEE4401B86"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Joggers Log/AppDelegate.swift"
+            filePath = "Joggers Log/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "sign(_:didSignInFor:withError:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "scene(_:openURLContexts:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE9F382C-B4AB-46FE-AEA5-CCBBFB6586F6"
+            uuid = "D809EE87-02AA-4FAE-94EB-BE4F6E935F98"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Joggers Log/AppDelegate.swift"
+            filePath = "Joggers Log/Controllers/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "firebaseSignUp(credential:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D809EE87-02AA-4FAE-94EB-BE4F6E935F98 - fdf9179f4f1b8cec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Joggers_Log.LoginViewController.firebaseSignUp(credential: __C.FIRAuthCredential) -&gt; ()"
+                  moduleName = "Joggers Log"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Nishant/Joggers%20Log/Joggers%20Log/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "371">
+               </Location>
+               <Location
+                  uuid = "D809EE87-02AA-4FAE-94EB-BE4F6E935F98 - fdf9179f4f1b8cec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Joggers_Log.LoginViewController.firebaseSignUp(credential: __C.FIRAuthCredential) -&gt; ()"
+                  moduleName = "Joggers Log"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Nishant/Joggers%20Log/Joggers%20Log/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "3722">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "113A3449-73CA-4CF6-BB89-4FA53E808A56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Joggers Log/Controllers/SignUpDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "firebaseSignUp(credential:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

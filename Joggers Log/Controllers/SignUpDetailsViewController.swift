@@ -23,6 +23,7 @@ class SignUpDetailsViewController: UIViewController {
     var name = String()
     var signUpMethod = String()
     var user = GIDGoogleUser()
+    var userAlreadyRegistered = Bool()
     
     @IBOutlet var loading: UIActivityIndicatorView!
     @IBOutlet var emailTextfield: SkyFloatingLabelTextField!
@@ -32,7 +33,7 @@ class SignUpDetailsViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkIfUserAlreadyExists(email: email)
         print(email)
         emailTextfield.text = email
         nameTextfield.text = name
@@ -41,10 +42,28 @@ class SignUpDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    func checkIfUserAlreadyExists(email: String){
+        Auth.auth().fetchProviders(forEmail: email, completion: {
+            (providers, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let providers = providers {
+                print(providers)
+                if providers != nil{
+                    print("User already registered. Login")
+                    self.userAlreadyRegistered = true
+                }else{
+                    self.userAlreadyRegistered = false
+                }
+            }
+        })
+    }
     @IBAction func signUpButton(_ sender: UIButton) {
+        
         loading.isHidden = false
         loading.startAnimating()
+        
         //check if textfields are empty
         if (emailTextfield.text != "" && nameTextfield.text != "" && dobTextfield.text != "" && genderTextfield.text != "") {
             let dobArray = dobTextfield.text!.map( { String($0) })
@@ -69,22 +88,43 @@ class SignUpDetailsViewController: UIViewController {
                     loading.isHidden = true
                 }
                 else{
-                    // all info is correctly entered proceed to complete signUp process on Firebase
+                    //check if user already exists or not
+                    if userAlreadyRegistered == false{
+                        // all info is correctly entered proceed to complete signUp process on Firebase
+                        
+                        //MARK:-  if user signed in using facebook
+                        if signUpMethod == Constants.signUpMethods.facebook{
+                            let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                            firebaseSignUp(credential: credential)
+                        }
+                            
+                            //MARK:- else if user signed in using google
+                        else{
+                            guard let authentication = user.authentication else { return }
+                            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                                           accessToken: authentication.accessToken)
+                            firebaseSignUp(credential: credential)
+                        }
+                    }else{
+                        //MARK:- user already registered
+                        let alert = UIAlertController.init(title: "Already Registered", message: "User already exists with the specified email.", preferredStyle: .alert)
+                        let loginAction  = UIAlertAction(title: "Login", style: .default) { (action) in
+                            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.VC.LoginViewController) as? LoginViewController
+                            self.navigationController?.pushViewController(loginVC!, animated: true)
+                            
+                        }
+                        alert.addAction(loginAction)
+                        present(alert, animated: true)
+                        
+                        self.loading.stopAnimating()
+                        self.loading.isHidden = true
+                        
+                        print("Already Registered")
+                        
+                        
+                        // present(alert, animated: true)
+                    }
                     
-                    //MARK:-  if user signed in using facebook
-                    if signUpMethod == Constants.signUpMethods.facebook{
-                        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-                        firebaseSignUp(credential: credential)
-                    }
-                        
-                        //MARK:- else if user signed in using google
-                    else{
-                        guard let authentication = user.authentication else { return }
-                        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                                       accessToken: authentication.accessToken)
-                        firebaseSignUp(credential: credential)
-                        
-                    }
                 }
             }
             
@@ -162,6 +202,8 @@ class SignUpDetailsViewController: UIViewController {
                     })
                 } else {
                     self.showMessagePrompt(error.localizedDescription)
+                    self.loading.stopAnimating()
+                    self.loading.isHidden = true
                     return
                 }
                 // ...
@@ -176,7 +218,9 @@ class SignUpDetailsViewController: UIViewController {
             newUser.dob = self.dobTextfield.text!
             newUser.gender = self.genderTextfield.text!
             
+            //save to coreData
             
+            DatabaseHelper.sharedInstance.createData(email: self.email, name: self.name)
             // Add a new document in collection "cities"
             self.db.collection("Users").document("\(newUser.email)").setData([
                 "email": newUser.email,
@@ -194,11 +238,12 @@ class SignUpDetailsViewController: UIViewController {
                     self.loading.stopAnimating()
                     self.loading.isHidden = true
                     print("Signed In using \(self.signUpMethod)")
+                    self.performSegue(withIdentifier: Constants.segues.ShowLoggedInScreen, sender: nil)
                     
                 }
             }
             
-           
+            
         }
     }
     

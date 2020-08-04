@@ -12,8 +12,7 @@ import GoogleSignIn
 
 class SignUpViewController: UIViewController, GIDSignInDelegate {
     
-    
-
+    var UserName = String()
    
     @IBOutlet var SwitchToLogin: UIButton!
     @IBOutlet var continueWithGoogle: GIDSignInButton!
@@ -102,7 +101,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate {
                 // 7
                 Profile.loadCurrentProfile { (profile, error) in
                     print(Profile.current as Any)
-                   // self?.updateMessage(with: Profile.current?.name)
+                    //self?.updateMessage(with: Profile.current?.name)
                 }
                 
             }
@@ -126,6 +125,7 @@ class SignUpViewController: UIViewController, GIDSignInDelegate {
         //here we specify the properties of profile we need like email,name etc.
         let email = user.profile.email
         let name = user.profile.name
+        
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpDetailsViewController") as! SignUpDetailsViewController
         self.navigationController?.pushViewController(detailVC, animated: true)
         detailVC.email = email!
