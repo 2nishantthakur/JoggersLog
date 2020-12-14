@@ -17,12 +17,14 @@ struct Constants {
         static let SignUpDetailsViewController  = "SignUpDetailsViewController"
         static let ShowLoggedInScreen = "ShowLoggedInScreen"
         static let successfullLogin = "successfullLogin"
+        static let ShowJogDetails = "ShowJogDetails"
     }
     struct VC {
         static let LoginViewController = "LoginViewController"
         static let LoggedInViewController = "LoggedInViewController"
         static let SignUpViewController = "SignUpViewController"
         static let FirstScreen = "ViewController"
+        static let JogDetailsViewController = "JogDetailsViewController"
     }
     struct entity{
         static let LoggedInUser = "LoggedInUser"

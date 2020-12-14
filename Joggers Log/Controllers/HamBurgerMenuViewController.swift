@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import GoogleSignIn
 import FirebaseFirestore
+import Firebase
 
 class HamBurgerMenuViewController: UIViewController {
     
@@ -61,12 +62,12 @@ class HamBurgerMenuViewController: UIViewController {
         if loggedInUser.count == 2{
             name.text = loggedInUser[1]
         }else{
-            
+            loggedInUser = [(Auth.auth().currentUser?.email)!, (Auth.auth().currentUser?.displayName)!]
+            print(loggedInUser)
+            name.text = loggedInUser[1]
         }
     }
-    func checkFirestoreForuserDetails(){
-        
-    }
+    
     
     func loadFacebookProfilePic(){
         Profile.loadCurrentProfile { (profile, error) in
@@ -82,7 +83,7 @@ class HamBurgerMenuViewController: UIViewController {
     }
     func getProfPic(fid: String?) {
         if (fid != "") {
-            let imgURLString = "http://graph.facebook.com/" + fid! + "/picture?type=large&access_token=0x600003baf600" //type=normal
+    //        let imgURLString = "http://graph.facebook.com/" + fid! + "/picture?type=large&access_token=0x600003baf600" //type=normal
             let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(200).height(200)"])
             graphRequest.start(completionHandler: { (connection, result, error) in
                 if error != nil {

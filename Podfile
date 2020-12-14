@@ -8,7 +8,6 @@ target 'Joggers Log' do
     pod 'FBSDKLoginKit'
     pod 'GoogleSignIn'
     pod 'SkyFloatingLabelTextField'
-    pod 'Firebase/Analytics'
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
 
