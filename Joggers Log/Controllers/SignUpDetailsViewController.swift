@@ -220,8 +220,8 @@ class SignUpDetailsViewController: UIViewController {
             
             //save to coreData
             
-            DatabaseHelper.sharedInstance.createData(email: self.email, name: self.name)
-            // Add a new document in collection "cities"
+            DatabaseHelper.sharedInstance.createData(email: self.email, name: self.name,entityName: Constants.entity.LoggedInUser)
+            // Add a new document
             self.db.collection("Users").document("\(newUser.email)").setData([
                 "email": newUser.email,
                 "name": newUser.name,

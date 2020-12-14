@@ -94,8 +94,9 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
         locationManager.startUpdatingLocation()
     }
     @IBAction func startButtonPressed(_ sender: Any) {
-        locationManager.startUpdatingLocation()
+        
         if startStopButton.titleLabel?.text == "START"{
+            locationManager.startUpdatingLocation()
             startPressed = true
            
            
@@ -129,10 +130,6 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
             var hourDifference = diff/3600
             var minuteDifference = (diff - hourDifference*3600)/60
             var secondDifference = (diff - hourDifference*3600 - minuteDifference*60)
-            print(hourDifference)
-            print(minuteDifference)
-            print(secondDifference)
-
             
             let durationString = ("\(hourDifference)hr \(minuteDifference) min \(secondDifference) sec")
             let totalDurationInHours = Double(hourDifference) + Double(minuteDifference)/60 + Double(secondDifference)/3600
@@ -152,6 +149,7 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
             jogDetailsVC.speed = avgSpeed
             jogDetailsVC.pace = avgPace
             jogDetailsVC.jogDurationINSeconds = diff
+            jogDetailsVC.userEmail = (Auth.auth().currentUser?.email)!
             navigationController?.pushViewController(jogDetailsVC, animated: true)
             print(dateString)
             distance = 0

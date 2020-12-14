@@ -269,7 +269,7 @@ extension LoginViewController{
             
             //MARK:-  User is Logged in
             //save userDetails to CoreData
-            DatabaseHelper.sharedInstance.createData(email: (Auth.auth().currentUser?.email)!, name:self.UserName)
+            DatabaseHelper.sharedInstance.createData(email: (Auth.auth().currentUser?.email)!, name:self.UserName, entityName: Constants.entity.LoggedInUser)
             
             print(Auth.auth().currentUser?.email)
             self.loading.stopAnimating()

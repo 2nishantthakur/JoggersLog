@@ -33,4 +33,9 @@ struct Constants {
         static let email = "email"
         static let name = "name"
     }
+    struct jogDetails{
+        static var distance = "distance"
+        static var duration = "duration"
+        static var date = "date"
+    }
 }

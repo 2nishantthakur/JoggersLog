@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class JogDetailsViewController: UIViewController {
 
@@ -16,12 +17,16 @@ class JogDetailsViewController: UIViewController {
     var speed = Float()
     var pace = Float()
     var jogDurationINSeconds = Int()
+    var userEmail = String()
+    let db = Firestore.firestore()
+    
     
     @IBOutlet var startDateTime: UILabel!
     @IBOutlet var distanceLbl: UILabel!
     @IBOutlet var durationLbl: UILabel!
     @IBOutlet var avgSpeedLbl: UILabel!
     @IBOutlet var avgPaceLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,9 +35,11 @@ class JogDetailsViewController: UIViewController {
         durationLbl.text = duration
         avgSpeedLbl.text = "\(String(format: "%.2f", speed))Km/hr"
         avgPaceLbl.text = "\(String(format: "%.3f", pace))hr/Km"
-        saveToCoreData(distance: distance, duration: duration, speed: speed, pace: pace)
+        saveToCoreData(distance: distance, duration: jogDurationINSeconds, speed: speed,pace: pace)
+        saveToFirebase(distance: distance, duration: jogDurationINSeconds, speed: speed, pace: pace)
         print(jogDurationINSeconds)
         print("X")
+        
         
         // Do any additional setup after loading the view.
     }
@@ -40,18 +47,40 @@ class JogDetailsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     //MARK:- Saving data to mobile storage
-    func saveToCoreData(distance: Double,duration: String,speed: Float,pace: Float){
-        
+    func saveToCoreData(distance: Double,duration: Int,speed: Float,pace: Float){
+        DatabaseHelper.sharedInstance.saveJogDetails(date: Date.getCurrentDate(), distance: Int(distance), duration: jogDurationINSeconds, entityName: userEmail )
+    }
+    func saveToFirebase(distance: Double,duration: Int,speed: Float,pace: Float){
+        let savingDateTime = Date()
+        self.db.collection("JogDetails").document("Details").collection("\((Auth.auth().currentUser?.email!)!)").document("\(savingDateTime)").setData([
+            "distance": distance,
+            "duration": duration,
+            "speed": speed,
+            "pace": pace
+        ]) { err in
+            if let err = err {
+                Alert.errorAlert(title: "Error", message: "There was an error Signing up!\(err)")
+            } else {
+                print("Document successfully written!")
+                
+            }
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
+extension Date {
+
+ static func getCurrentDate() -> String {
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+
+        return dateFormatter.string(from: Date())
+
+    }
+}
+
+

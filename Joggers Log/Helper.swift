@@ -42,9 +42,9 @@ class DatabaseHelper{
     let managedContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     //create data
-    func createData(email: String, name: String){
+    func createData(email: String, name: String,entityName: String){
         
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.entity.LoggedInUser)
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do{
             try managedContext!.execute(deleteRequest)
@@ -54,7 +54,7 @@ class DatabaseHelper{
             print ("There was an error")
         }
         
-        let userEntity = NSEntityDescription.entity(forEntityName: Constants.entity.LoggedInUser, in: managedContext!)
+        let userEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext!)
         let loggedInUser = NSManagedObject(entity: userEntity!, insertInto: managedContext)
         loggedInUser.setValue(email, forKey: Constants.attributes.email)
         loggedInUser.setValue(name, forKey: Constants.attributes.name)
@@ -80,6 +80,22 @@ class DatabaseHelper{
         }
        return loggedInUser
     }
+    
+    func saveJogDetails(date: String, distance: Int,duration: Int, entityName: String){
+
+        let userEntity = NSEntityDescription.entity(forEntityName: "JogDetail", in: managedContext!)
+        let jogDetails = NSManagedObject(entity: userEntity!, insertInto: managedContext)
+        jogDetails.setValue(date, forKey: Constants.jogDetails.date)
+        jogDetails.setValue(distance, forKey: Constants.jogDetails.distance)
+        jogDetails.setValue(duration, forKey: Constants.jogDetails.duration)
+
+        do{
+            try managedContext!.save()
+        }catch let error as NSError{
+            print("could not save \(error), \(error.userInfo)")
+        }
+    }
+//
     
 }
 
