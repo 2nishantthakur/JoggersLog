@@ -12,6 +12,8 @@ import FBSDKLoginKit
 import GoogleSignIn
 import CoreData
 
+var signUpMethod = String()
+
 class LoginViewController: UIViewController, GIDSignInDelegate {
     
     @IBOutlet var continueWithGoogle: UIButton!
@@ -20,7 +22,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet var loading: UIActivityIndicatorView!
     
     var userAlreadyRegistered = Bool()
-    var signUpMethod = String()
+    
     var user = GIDGoogleUser()
     var UserName = String()
     
@@ -116,6 +118,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate {
                 Profile.loadCurrentProfile { (profile, error) in
                     print(Profile.current as Any)
                    print(Profile.current?.userID)
+                   
                     //self?.updateMessage(with: Profile.current?.name)
                 }
                 

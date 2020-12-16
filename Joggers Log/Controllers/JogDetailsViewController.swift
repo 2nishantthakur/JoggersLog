@@ -19,7 +19,7 @@ class JogDetailsViewController: UIViewController {
     var jogDurationINSeconds = Int()
     var userEmail = String()
     let db = Firestore.firestore()
-    
+    var sender = String()
     
     @IBOutlet var startDateTime: UILabel!
     @IBOutlet var distanceLbl: UILabel!
@@ -32,27 +32,36 @@ class JogDetailsViewController: UIViewController {
 
         distanceLbl.text = String(format: "%.2f", distance) + " m"
         startDateTime.text = startDateAndTime
-        durationLbl.text = duration
+        durationLbl.text = String(duration+"seconds")
         avgSpeedLbl.text = "\(String(format: "%.2f", speed))Km/hr"
         avgPaceLbl.text = "\(String(format: "%.3f", pace))hr/Km"
-        saveToCoreData(distance: distance, duration: jogDurationINSeconds, speed: speed,pace: pace)
-        saveToFirebase(distance: distance, duration: jogDurationINSeconds, speed: speed, pace: pace)
-        print(jogDurationINSeconds)
-        print("X")
+        //check if the jog details are opened for current jog or from tableview i.e previous jogs
+        //sender == map means current jog
+        //sender == tableview means from tableview of previous jogs
+        if sender == "map"{
+            saveToCoreData(distance: distance, duration: jogDurationINSeconds, speed: speed,pace: pace)
+            saveToFirebase(distance: distance, duration: jogDurationINSeconds, speed: speed, pace: pace)
+        }
         
-        
-        // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func back(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     //MARK:- Saving data to mobile storage
     func saveToCoreData(distance: Double,duration: Int,speed: Float,pace: Float){
-        DatabaseHelper.sharedInstance.saveJogDetails(date: Date.getCurrentDate(), distance: Int(distance), duration: jogDurationINSeconds, entityName: userEmail )
+        DatabaseHelper.sharedInstance.saveJogDetails(date: String("\(Date())".prefix(19)),
+                                                     distance: distance,
+                                                     duration: jogDurationINSeconds,
+                                                     speed: speed,
+                                                     pace: pace)
     }
+    
+    //MARK:- save jog details to firebase
     func saveToFirebase(distance: Double,duration: Int,speed: Float,pace: Float){
         let savingDateTime = Date()
-        self.db.collection("JogDetails").document("Details").collection("\((Auth.auth().currentUser?.email!)!)").document("\(savingDateTime)").setData([
+        self.db.collection("JogDetails").document("Details").collection("\((Auth.auth().currentUser?.email!)!)").document(String("\(savingDateTime)".prefix(19))).setData([
             "distance": distance,
             "duration": duration,
             "speed": speed,

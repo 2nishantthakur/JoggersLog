@@ -37,5 +37,7 @@ struct Constants {
         static var distance = "distance"
         static var duration = "duration"
         static var date = "date"
+        static var speed = "speed"
+        static var pace = "pace"
     }
 }

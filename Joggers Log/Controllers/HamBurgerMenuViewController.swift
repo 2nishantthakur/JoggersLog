@@ -24,17 +24,21 @@ class HamBurgerMenuViewController: UIViewController {
     var profileImage = UIImage()
     var UserImage = String()
     var loggedInUser = [String()]
+    var instance = LoggedInViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-      
+       
         image.layer.cornerRadius = image.frame.height/2
         //check if core data has user details if yes then show them otherwise check details in firestore
         checkCoreDataForUserDetails()
         //check for facebook login and then if logged in using fb then load profile pic
-        loadFacebookProfilePic()
+        if signUpMethod == Constants.signUpMethods.facebook{
+            loadFacebookProfilePic()
+        }
+        
         
         
     }
@@ -48,6 +52,16 @@ class HamBurgerMenuViewController: UIViewController {
         startButton.backgroundColor = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)
         me.backgroundColor = .white
         settingsButton.backgroundColor = .white
+//        instance.configureMenu(sender: "closeMenu")
+//        instance.hideSlidingMenu(self)
+//        instance.slideingMenuHidingButton.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+
+                        self.view.frame.origin.x = -self.view.frame.width
+        //                print("View Width = \(self.view.frame.width)")
+        //                print("Slider View Width = \(self.menu.view.frame.width)")
+        //                print(self.menu.view.frame.origin.x)
+                    }
     }
     @IBAction func settingsButtonClicked(_ sender: Any) {
         settingsButton.backgroundColor = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)

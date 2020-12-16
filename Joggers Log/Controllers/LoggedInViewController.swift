@@ -79,7 +79,7 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func hideSlidingMenu(_ sender: UIButton) {
+    @IBAction func hideSlidingMenu(_ sender: Any) {
         configureMenu(sender: "closeMenu")
         slideingMenuHidingButton.isEnabled = false
         slideingMenuHidingButton.alpha = 0
@@ -104,37 +104,19 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
             startStopButton.setTitle("STOP", for: .normal)
             
             start = Date()
-//            startHour = Calendar.current.component(.hour, from: start)
-//            startMinute = Calendar.current.component(.minute, from: start)
-//            startSecond = Calendar.current.component(.second, from: start)
-//            let formatter = DateFormatter()
-//            formatter.timeZone = TimeZone.current
-//            formatter.dateFormat = "d MMM yyyy, h:mm a"
-//
-//            dateString = formatter.string(from: start)
         }else{
             let now = Date()
            //MARK:-find time difference
-            
-//            endHour = Calendar.current.component(.hour, from: now)
-//            endMinute = Calendar.current.component(.minute, from: now)
-//            endSecond = Calendar.current.component(.second, from: now)
-//
-//            var hourDifference = endHour - startHour
-//            var minuteDifference = endMinute - startMinute
-//            var secondDifference = endSecond - startSecond
-
             let diff = Int(now.timeIntervalSince1970 - start.timeIntervalSince1970)
             print(diff)
             //time diff in seconds
-            var hourDifference = diff/3600
-            var minuteDifference = (diff - hourDifference*3600)/60
-            var secondDifference = (diff - hourDifference*3600 - minuteDifference*60)
+            let hourDifference = diff/3600
+            let minuteDifference = (diff - hourDifference*3600)/60
+            let secondDifference = (diff - hourDifference*3600 - minuteDifference*60)
             
             let durationString = ("\(hourDifference)hr \(minuteDifference) min \(secondDifference) sec")
             let totalDurationInHours = Double(hourDifference) + Double(minuteDifference)/60 + Double(secondDifference)/3600
-            //
-        
+            
             print(totalDurationInHours)
             print(distance/1000)
             avgSpeed = Float(Double(distance/1000)/totalDurationInHours)
@@ -150,6 +132,7 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
             jogDetailsVC.pace = avgPace
             jogDetailsVC.jogDurationINSeconds = diff
             jogDetailsVC.userEmail = (Auth.auth().currentUser?.email)!
+            jogDetailsVC.sender = "map"
             navigationController?.pushViewController(jogDetailsVC, animated: true)
             print(dateString)
             distance = 0

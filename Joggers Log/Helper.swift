@@ -35,6 +35,7 @@ struct Alert {
     
     
 }
+
 class DatabaseHelper{
     
     static var sharedInstance = DatabaseHelper()
@@ -81,13 +82,15 @@ class DatabaseHelper{
        return loggedInUser
     }
     
-    func saveJogDetails(date: String, distance: Int,duration: Int, entityName: String){
+    func saveJogDetails(date: String, distance: Double,duration: Int, speed: Float,pace: Float){
 
         let userEntity = NSEntityDescription.entity(forEntityName: "JogDetail", in: managedContext!)
         let jogDetails = NSManagedObject(entity: userEntity!, insertInto: managedContext)
         jogDetails.setValue(date, forKey: Constants.jogDetails.date)
         jogDetails.setValue(distance, forKey: Constants.jogDetails.distance)
         jogDetails.setValue(duration, forKey: Constants.jogDetails.duration)
+        jogDetails.setValue(speed, forKey: Constants.jogDetails.speed)
+        jogDetails.setValue(pace, forKey: Constants.jogDetails.pace)
 
         do{
             try managedContext!.save()
@@ -95,6 +98,7 @@ class DatabaseHelper{
             print("could not save \(error), \(error.userInfo)")
         }
     }
+    
 //
     
 }

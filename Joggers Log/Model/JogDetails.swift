@@ -9,9 +9,9 @@
 import Foundation
 
 struct JogDetails {
-    var distance = Float()
-    var time = String()
+    var distance = Double()
+    var time = Int()
     var avgSpeed = Float()
     var avgPace = Float()
-    var DateOfJog = Date()
+    var dateOfJog = String()
 }

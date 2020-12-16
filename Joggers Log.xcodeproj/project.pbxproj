@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		40AE22A709F28F54B8A704CC /* Pods_Joggers_Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */; };
+		840C93E22588947E00894C4A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C93E12588947E00894C4A /* LogViewController.swift */; };
+		840C93ED2588B45D00894C4A /* JogDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C93EB2588B45D00894C4A /* JogDetailTableViewCell.swift */; };
+		840C93EE2588B45D00894C4A /* JogDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C93EC2588B45D00894C4A /* JogDetailTableViewCell.xib */; };
 		842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */; };
 		84780CD5257CE402006C25F3 /* JogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84780CD4257CE402006C25F3 /* JogDetails.swift */; };
 		8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		0363771BE09033252B570D89 /* Pods-Joggers Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joggers Log.release.xcconfig"; path = "Target Support Files/Pods-Joggers Log/Pods-Joggers Log.release.xcconfig"; sourceTree = "<group>"; };
 		61805F4F2DEBC8ED29790D8A /* Pods_Joggers_Log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joggers_Log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840C93E12588947E00894C4A /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		840C93EB2588B45D00894C4A /* JogDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetailTableViewCell.swift; sourceTree = "<group>"; };
+		840C93EC2588B45D00894C4A /* JogDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogDetailTableViewCell.xib; sourceTree = "<group>"; };
 		842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84780CD4257CE402006C25F3 /* JogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetails.swift; sourceTree = "<group>"; };
 		8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				8494B8C424CC2B98002C9EAC /* Main.storyboard */,
+				840C93EB2588B45D00894C4A /* JogDetailTableViewCell.swift */,
+				840C93EC2588B45D00894C4A /* JogDetailTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 				842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */,
 				848DCFC124D41C43005FD125 /* LoggedInViewController.swift */,
 				849B9CA024E2C63D0024262B /* JogDetailsViewController.swift */,
+				840C93E12588947E00894C4A /* LogViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8494B8CE24CC2B9B002C9EAC /* LaunchScreen.storyboard in Resources */,
+				840C93EE2588B45D00894C4A /* JogDetailTableViewCell.xib in Resources */,
 				84F784BA24D33830008DE9E3 /* GoogleService-Info.plist in Resources */,
 				8494B8CB24CC2B9B002C9EAC /* Assets.xcassets in Resources */,
 				8494B8C624CC2B98002C9EAC /* Main.storyboard in Resources */,
@@ -291,12 +301,14 @@
 				848DCFC224D41C44005FD125 /* LoggedInViewController.swift in Sources */,
 				84DE648124CD80560010D198 /* LoginViewController.swift in Sources */,
 				8494B8C324CC2B98002C9EAC /* ViewController.swift in Sources */,
+				840C93E22588947E00894C4A /* LogViewController.swift in Sources */,
 				8494B8BF24CC2B98002C9EAC /* AppDelegate.swift in Sources */,
 				8494B8C924CC2B98002C9EAC /* Joggers_Log.xcdatamodeld in Sources */,
 				8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */,
 				8494B8C124CC2B98002C9EAC /* SceneDelegate.swift in Sources */,
 				84DE647F24CD664C0010D198 /* SignUpViewController.swift in Sources */,
 				849B9CA124E2C63D0024262B /* JogDetailsViewController.swift in Sources */,
+				840C93ED2588B45D00894C4A /* JogDetailTableViewCell.swift in Sources */,
 				84F3B8D024D2B3FA002962C8 /* Helper.swift in Sources */,
 				848DCFC024D3F436005FD125 /* User.swift in Sources */,
 				842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */,
