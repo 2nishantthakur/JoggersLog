@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 import FirebaseFirestore
 import Firebase
+import FBSDKLoginKit
 
 class HamBurgerMenuViewController: UIViewController {
     
@@ -43,6 +44,24 @@ class HamBurgerMenuViewController: UIViewController {
         
     }
     
+    @IBAction func logOutButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Log Out?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "LogOut", style: UIAlertAction.Style.destructive, handler: { (action) in
+            do { try Auth.auth().signOut() }
+            catch { print("already logged out") }
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            GIDSignIn.sharedInstance().signOut()
+            DatabaseHelper.sharedInstance.deleteJogDetails()
+            let rootViewController = self.storyboard!.instantiateViewController(withIdentifier: Constants.VC.FirstScreen)
+            let nav = UINavigationController(rootViewController: rootViewController)
+            self.view.window!.rootViewController = nav
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     @IBAction func meButton(_ sender: Any) {
         me.backgroundColor = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)
         startButton.backgroundColor = .white

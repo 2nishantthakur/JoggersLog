@@ -99,6 +99,13 @@ class DatabaseHelper{
         }
     }
     
+    func deleteJogDetails(){
+//        let userEntity = NSEntityDescription.entity(forEntityName: "JogDetail", in: managedContext!)
+//        do{
+//            try managedContext?.delete(userEntity)
+//        }
+    }
+    
 //
     
 }
