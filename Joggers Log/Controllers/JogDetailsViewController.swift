@@ -41,6 +41,11 @@ class JogDetailsViewController: UIViewController {
         if sender == "map"{
             saveToCoreData(distance: distance, duration: jogDurationINSeconds, speed: speed,pace: pace)
             saveToFirebase(distance: distance, duration: jogDurationINSeconds, speed: speed, pace: pace)
+            let jd = JogDetails(distance: distance, time: jogDurationINSeconds, avgSpeed: speed, avgPace: pace, dateOfJog: String("\(Date())".prefix(19)))
+            logs.append(jd)
+//            type(of: jd).init(distance: distance, time: jogDurationINSeconds, avgSpeed: speed, avgPace: pace, dateOfJog: String("\(Date())".prefix(19))
+            
+            
         }
         
     }

@@ -87,54 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A988CCB2-46F0-4266-88DC-D89825334A51"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Joggers Log/Controllers/LogViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "checkJogDetailsOnCoredate()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A988CCB2-46F0-4266-88DC-D89825334A51 - 426ab1263d616b1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Joggers_Log.LogViewController.checkJogDetailsOnCoredate() -&gt; ()"
-                  moduleName = "Joggers Log"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Nishant/Joggers%20Log/Joggers%20Log/Controllers/LogViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "1549">
-               </Location>
-               <Location
-                  uuid = "A988CCB2-46F0-4266-88DC-D89825334A51 - 426ab1263d616b1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Joggers_Log.LogViewController.checkJogDetailsOnCoredate() -&gt; ()"
-                  moduleName = "Joggers Log"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Nishant/Joggers%20Log/Joggers%20Log/Controllers/LogViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "7681">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AB028A48-DF7A-4869-B226-BB1180C6E0CE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -142,8 +94,8 @@
             filePath = "Joggers Log/Controllers/JogDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "saveToCoreData(distance:duration:speed:pace:)"
             landmarkType = "7">
          </BreakpointContent>

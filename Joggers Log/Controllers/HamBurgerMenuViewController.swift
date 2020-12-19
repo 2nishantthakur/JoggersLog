@@ -45,6 +45,7 @@ class HamBurgerMenuViewController: UIViewController {
     }
     
     @IBAction func logOutButton(_ sender: Any) {
+        DatabaseHelper.sharedInstance.deleteJogDetails()
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to Log Out?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "LogOut", style: UIAlertAction.Style.destructive, handler: { (action) in
@@ -53,7 +54,7 @@ class HamBurgerMenuViewController: UIViewController {
             let loginManager = LoginManager()
             loginManager.logOut()
             GIDSignIn.sharedInstance().signOut()
-            DatabaseHelper.sharedInstance.deleteJogDetails()
+            
             let rootViewController = self.storyboard!.instantiateViewController(withIdentifier: Constants.VC.FirstScreen)
             let nav = UINavigationController(rootViewController: rootViewController)
             self.view.window!.rootViewController = nav

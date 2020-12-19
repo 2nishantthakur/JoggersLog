@@ -312,7 +312,7 @@
                                         <rect key="frame" x="73" y="20" width="297" height="98"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-Vq-mTx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-Vq-mTx">
                                         <rect key="frame" x="288" y="20" width="103" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -368,7 +368,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="distanceLbl" destination="Vh9-Vq-mTx" id="2zT-M0-xLF"/>
                         <outlet property="mapView" destination="xVx-n7-h9q" id="KIb-DS-wlj"/>
                         <outlet property="myLocationButton" destination="ABM-gb-Vo9" id="2Ed-Gw-gxf"/>
                         <outlet property="slideingMenuHidingButton" destination="dJG-sO-Aqj" id="7db-4N-UkV"/>

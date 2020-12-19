@@ -100,13 +100,22 @@ class DatabaseHelper{
     }
     
     func deleteJogDetails(){
-//        let userEntity = NSEntityDescription.entity(forEntityName: "JogDetail", in: managedContext!)
-//        do{
-//            try managedContext?.delete(userEntity)
-//        }
+       // Create Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "JogDetail")
+
+       // Create Batch Delete Request
+       let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+       do {
+        try managedContext!.execute(batchDeleteRequest)
+
+       } catch {
+        print("error deleting data")
+           // Error Handling
+       }
     }
     
-//
+
     
 }
 

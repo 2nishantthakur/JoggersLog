@@ -40,7 +40,7 @@ class LoggedInViewController: UIViewController,CLLocationManagerDelegate, MKMapV
     
     
     @IBOutlet var startStopButton: UIButton!
-    @IBOutlet var distanceLbl: UILabel!
+//    @IBOutlet var distanceLbl: UILabel!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var slideingMenuHidingButton: UIButton!
     @IBOutlet var myLocationButton: UIButton!
@@ -219,7 +219,7 @@ extension LoggedInViewController{
                 print("Traveled Distance:",  distance)
                 
                 print("Straight Distance:", startLocation.distance(from: locations.last!))
-                distanceLbl.text = distance as? String
+//                distanceLbl.text = distance as? String
             }
             lastLocation = locations.last
             let aPolyline = MKPolyline(coordinates: userLocations, count: userLocations.count)
