@@ -46,6 +46,10 @@ class LogViewController: UIViewController{
             tableView.reloadData()
             
         }
+        if logs.count==1{
+            checkJogDetailsDataInFirebase()
+        }
+        
         
     }
     
@@ -53,6 +57,10 @@ class LogViewController: UIViewController{
         navigationController?.popViewController(animated: true)
     }
     @IBAction func checkOnFirebase(_ sender: Any) {
+        checkJogDetailsDataInFirebase()
+    }
+    
+    func checkJogDetailsDataInFirebase(){
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         db.collection("JogDetails").document("Details").collection("\((Auth.auth().currentUser?.email!)!)").getDocuments { (querySnapshot, error) in
@@ -70,6 +78,9 @@ class LogViewController: UIViewController{
                     }
                     else{
                         print(snapShotDocuments)
+                        logs.removeAll()
+                        DatabaseHelper.sharedInstance.deleteJogDetails()
+                        //deleting previous jog record on CoreData
                         for doc in snapShotDocuments{
                             let data = doc.data()
                             print(data)
@@ -79,6 +90,8 @@ class LogViewController: UIViewController{
                             self.jd.time = data["duration"] as! Int
                             self.jd.dateOfJog = doc.documentID
                             logs.append(self.jd)
+                            DatabaseHelper.sharedInstance.saveJogDetails(date: self.jd.dateOfJog, distance: self.jd.distance, duration: self.jd.time, speed: self.jd.avgSpeed, pace: self.jd.avgPace)
+                            //Adding Data from firebase to local storage
                             self.tableView.reloadData()
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true
@@ -90,6 +103,7 @@ class LogViewController: UIViewController{
                     }
                     
                 }
+                
             }
         }
     }

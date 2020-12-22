@@ -11,7 +11,6 @@
 		840C93E22588947E00894C4A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C93E12588947E00894C4A /* LogViewController.swift */; };
 		840C93ED2588B45D00894C4A /* JogDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C93EB2588B45D00894C4A /* JogDetailTableViewCell.swift */; };
 		840C93EE2588B45D00894C4A /* JogDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840C93EC2588B45D00894C4A /* JogDetailTableViewCell.xib */; };
-		842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */; };
 		84780CD5257CE402006C25F3 /* JogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84780CD4257CE402006C25F3 /* JogDetails.swift */; };
 		8485F3B824CF0D4E00D60D62 /* SignUpDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */; };
 		848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848DCFBD24D3E89B005FD125 /* Constants.swift */; };
@@ -38,7 +37,6 @@
 		840C93E12588947E00894C4A /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		840C93EB2588B45D00894C4A /* JogDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetailTableViewCell.swift; sourceTree = "<group>"; };
 		840C93EC2588B45D00894C4A /* JogDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogDetailTableViewCell.xib; sourceTree = "<group>"; };
-		842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		84780CD4257CE402006C25F3 /* JogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogDetails.swift; sourceTree = "<group>"; };
 		8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDetailsViewController.swift; sourceTree = "<group>"; };
 		848DCFBD24D3E89B005FD125 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				84DE648024CD80560010D198 /* LoginViewController.swift */,
 				8485F3B724CF0D4E00D60D62 /* SignUpDetailsViewController.swift */,
 				848DCFC324D4847C005FD125 /* HamBurgerMenuViewController.swift */,
-				842B0A2424D5CDDF0049B007 /* SettingsViewController.swift */,
 				848DCFC124D41C43005FD125 /* LoggedInViewController.swift */,
 				849B9CA024E2C63D0024262B /* JogDetailsViewController.swift */,
 				840C93E12588947E00894C4A /* LogViewController.swift */,
@@ -311,7 +308,6 @@
 				840C93ED2588B45D00894C4A /* JogDetailTableViewCell.swift in Sources */,
 				84F3B8D024D2B3FA002962C8 /* Helper.swift in Sources */,
 				848DCFC024D3F436005FD125 /* User.swift in Sources */,
-				842B0A2524D5CDDF0049B007 /* SettingsViewController.swift in Sources */,
 				84780CD5257CE402006C25F3 /* JogDetails.swift in Sources */,
 				848DCFBE24D3E89C005FD125 /* Constants.swift in Sources */,
 				848DCFC424D4847C005FD125 /* HamBurgerMenuViewController.swift in Sources */,
